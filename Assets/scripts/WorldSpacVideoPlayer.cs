@@ -10,6 +10,7 @@ public class WorldSpacVideoPlayer : MonoBehaviour
     public Renderer playButtonRenderer;
     public VideoClip[] videoClips;
     public GameObject[] Buttons;
+    public Image[] image;
 
     private VideoPlayer videoPlayer;
     private int videoClipIndex = 0;
@@ -20,7 +21,7 @@ public class WorldSpacVideoPlayer : MonoBehaviour
     void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer> ();
-
+        
     }
 
     // Use this for initialization
@@ -28,9 +29,9 @@ public class WorldSpacVideoPlayer : MonoBehaviour
     {
         videoPlayer.targetTexture.Release ();
         videoPlayer.clip = videoClips [0];
+        //c   videoPlayer.image = image[0];
 
-       
-        
+
     }
 
     // Update is called once per frame
