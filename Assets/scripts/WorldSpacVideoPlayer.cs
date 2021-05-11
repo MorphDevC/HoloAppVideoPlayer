@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-using UnityEngine.UI;
-using System.Linq;
 
+using System.Linq;
+using UnityEngine.UIElements;
 public class WorldSpacVideoPlayer : MonoBehaviour
 {
     public Renderer playButtonRenderer;
     public VideoClip[] videoClips;
     public GameObject[] Buttons;
-    public Image[] image;
-
+    public Sprite newSprite;
+    public Image baseImage;
     private VideoPlayer videoPlayer;
     private int videoClipIndex = 0;
 
 
+   
 
 
     void Awake()
