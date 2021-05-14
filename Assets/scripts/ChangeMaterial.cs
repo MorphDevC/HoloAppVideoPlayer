@@ -1,44 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeMaterial : MonoBehaviour
 {
-    public Material[] material;
-    public int x;
-    Renderer rend;
-    
-    
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    public Texture[] Textures;
+    public GameObject SplashScreen;
+    private static int __tempTextIndex;
+
+    private void Awake()
     {
-        x = 0;
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
-        rend.sharedMaterial = material[x];
+        SplashScreen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeSplashScreen()
     {
-        rend.sharedMaterial = material[x];
+        SplashScreen.gameObject.SetActive(true);
+        string tempString = gameObject.name.Remove(0,5);
+        __tempTextIndex = Convert.ToInt32(tempString);
+        SplashScreen.GetComponent<Material>().mainTexture = Textures[__tempTextIndex];
     }
 
-
-    public void NextMaterial()
-
+    public void SplashScreenOnPlay()
     {
-        if(x<2)
-        {
-            x++;
-        }
-        else
-        {
-            x = 0;
-        }
-
-
+        SplashScreen.SetActive(false);
     }
+
+    public void SplashScreenOnPause()
+    {
+        SplashScreen.SetActive(true);
+        SplashScreen.GetComponent<Material>().mainTexture = Textures[__tempTextIndex];
+    }
+    
 }

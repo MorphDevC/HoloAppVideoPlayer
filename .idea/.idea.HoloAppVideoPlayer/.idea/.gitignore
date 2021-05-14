@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.HoloAppVideoPlayer.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\1_D\1_Programming and PO\1_Unity\Projects\1_RealTimeProjects\HoloAppVideoPlayer\.idea\.idea.HoloAppVideoPlayer\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
