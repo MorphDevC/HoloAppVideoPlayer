@@ -53,7 +53,7 @@ public class WorldSpacVideoPlayer : MonoBehaviour
 
         videoPlayer.clip = videoClips [videoClipIndex];
         SetTotalTimeUI ();
-        videoPlayer.Play ();
+        videoPlayer.Pause(); // Was Play();
 
     }
 

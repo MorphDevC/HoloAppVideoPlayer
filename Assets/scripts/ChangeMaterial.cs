@@ -1,36 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 
 public class ChangeMaterial : MonoBehaviour
 {
-    public Texture[] Textures;
+    public List<Texture2D> Texture2Ds = new List<Texture2D>();
     public GameObject SplashScreen;
-    private static int __tempTextIndex;
 
     private void Awake()
     {
-        SplashScreen.SetActive(false);
+        Instance = this;
+        //gameObject.transform.GetChild(i).gameObject.AddComponent<ButtonSplashScreenAction>()
     }
 
-    public void ChangeSplashScreen()
-    {
-        SplashScreen.gameObject.SetActive(true);
-        string tempString = gameObject.name.Remove(0,5);
-        __tempTextIndex = Convert.ToInt32(tempString);
-        SplashScreen.GetComponent<Material>().mainTexture = Textures[__tempTextIndex];
-    }
-
-    public void SplashScreenOnPlay()
-    {
-        SplashScreen.SetActive(false);
-    }
-
-    public void SplashScreenOnPause()
+    public void SetTextureOnPause()
     {
         SplashScreen.SetActive(true);
-        SplashScreen.GetComponent<Material>().mainTexture = Textures[__tempTextIndex];
     }
-    
+
+    public void SetTextureOnPlay()
+    {
+        SplashScreen.SetActive(false);
+    }
+
+    public static ChangeMaterial Instance;
+
 }
